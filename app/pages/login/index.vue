@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import LoginInput from "~/components/LoginInput.vue";
+import {useAuthStore} from "~/stores/authStore";
 
 const username = ref<string>("");
 const password = ref<string>("");
+const authStore = useAuthStore();
 
 function login() {
-  console.log(username.value);
-  console.log(password.value);
+  authStore.login(username.value, password.value);
+  navigateTo('/');
 }
 </script>
 

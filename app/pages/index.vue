@@ -1,8 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import {storeToRefs} from "pinia";
+import {useAuthStore} from "~/stores/authStore";
+
+const authStore = useAuthStore();
+const { username } = storeToRefs(authStore);
+
+</script>
 
 <template>
   <div>
-    <p>welcome</p>
+    <p>welcome {{ username }}</p>
   </div>
 </template>
 
