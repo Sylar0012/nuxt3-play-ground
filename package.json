@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "format": "prettier --write app/"
   },
   "dependencies": {
     "@primeuix/themes": "^1.2.3",
@@ -23,6 +24,7 @@
     "@primevue/nuxt-module": "^4.3.7",
     "@tailwindcss/postcss": "^4.1.12",
     "autoprefixer": "^10.4.21",
+    "prettier": "3.6.2",
     "sass-embedded": "^1.90.0",
     "tailwindcss": "^4.1.12",
     "vite": "6.0.11"

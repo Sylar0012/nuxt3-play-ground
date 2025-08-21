@@ -1,8 +1,8 @@
-@use 'primeicons/primeicons.css';
-@use 'tailwind.css';
+@use "primeicons/primeicons.css";
+@use "tailwind.css";
 
 /* You can add global styles to this file, and also import other style files */
-@use './variables/_common.scss';
+@use "./variables/_common.scss";
 
 * {
   box-sizing: border-box;
@@ -35,7 +35,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-html, body {
+html,
+body {
   overscroll-behavior: none;
 }
 
@@ -43,7 +44,11 @@ a {
   text-decoration: none;
 }
 
-button, input, select, optgroup, textarea {
+button,
+input,
+select,
+optgroup,
+textarea {
   font: inherit;
   font-feature-settings: inherit;
   font-variation-settings: inherit;
@@ -53,4 +58,3 @@ button, input, select, optgroup, textarea {
   background-color: #0000;
   border-radius: 0;
 }
-
