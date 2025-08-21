@@ -1,3 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@source "../../../app/**/*.{vue,ts,js}",
+"../../components/**/*.{vue,ts,js}",
+"../../layouts/**/*.{vue,ts,js}",
+"../../pages/**/*.{vue,ts,js}",
+"../../plugins/**/*.{js,ts}";

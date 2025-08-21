@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   srcDir: 'app',
   devtools: { enabled: true },
   modules: [
-    '@primevue/nuxt-module'
+    '@primevue/nuxt-module',
   ],
   primevue: {
     options: {
@@ -15,8 +15,8 @@ export default defineNuxtConfig({
     }
   },
   css: [
-    '@/assets/css/tailwind.css',
-    '@/assets/css/styles.scss'
+    '~/assets/css/tailwind.css',
+    '~/assets/css/styles.scss'
   ],
   postcss: {
     plugins: {

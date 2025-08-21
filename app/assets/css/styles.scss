@@ -1,5 +1,5 @@
 @use 'primeicons/primeicons.css';
-@use './tailwind.css';
+@use 'tailwind.css';
 
 /* You can add global styles to this file, and also import other style files */
 @use './variables/_common.scss';
@@ -54,6 +54,3 @@ button, input, select, optgroup, textarea {
   border-radius: 0;
 }
 
-::placeholder {
-  color: #31462c80 !important;
-}
