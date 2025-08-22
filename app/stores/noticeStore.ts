@@ -5,6 +5,7 @@ export const useNoticeStore = defineStore("NoticeStore", () => {
   const { $api } = useNuxtApp();
 
   const notices = ref<Notice[]>([]);
+  const notice = ref<Notice | null>(null);
   const error = ref<string | null>(null);
 
   async function fetchNotices() {
@@ -17,5 +18,15 @@ export const useNoticeStore = defineStore("NoticeStore", () => {
     }
   }
 
-  return { notices, error, fetchNotices };
+  async function fetchGetNoticeDetail(id: number) {
+    error.value = null;
+    try {
+      const { data } = await $api.getNoticeDetails(id);
+      notice.value = data;
+    } catch (e: any) {
+      error.value = e?.message ?? "failed to fetch notice";
+    }
+  }
+
+  return { notices, error, fetchNotices, notice, fetchGetNoticeDetail };
 });

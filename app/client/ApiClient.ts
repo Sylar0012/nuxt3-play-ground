@@ -17,6 +17,10 @@ class ApiClient {
   async getNotices(): Promise<AxiosResponse<Notice[]>> {
     return await this.axios.get<Notice[]>(`/notices`);
   }
+
+  async getNoticeDetails(id: number): Promise<AxiosResponse<Notice>> {
+    return await this.axios.get(`/notices/${id}`);
+  }
 }
 
 export const apiClient = new ApiClient();

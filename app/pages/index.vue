@@ -17,9 +17,17 @@ onMounted(() => {
 <template>
   <div>
     <p>welcome {{ username }}</p>
-    <p>
-      {{ notices }}
-    </p>
+    <div>
+      <ul>
+        <li v-for="(notice, i) in notices" :key="notice.id" class="flex">
+          <span>{{ notice.id }}</span>
+          <NuxtLink :to="{ name: 'notice-id', params: { id: notice.id } }">
+            <span>{{ notice.title }}</span>
+          </NuxtLink>
+          <span>{{ notice.content }}</span>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
