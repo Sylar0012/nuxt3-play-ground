@@ -8,7 +8,7 @@ const authStore = useAuthStore();
 
 function login() {
   authStore.login(username.value, password.value);
-  navigateTo("/");
+
 }
 </script>
 

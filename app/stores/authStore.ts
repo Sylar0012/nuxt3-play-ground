@@ -1,17 +1,25 @@
 import { defineStore } from "pinia";
+import {useLocalStorage} from "@vueuse/core";
+import { navigateTo } from "#app";
 
 export const useAuthStore = defineStore("AuthStore", () => {
-  const username = ref<string>("");
-  const password = ref<string>("");
+  const { $api } = useNuxtApp();
+  const username = useLocalStorage("username",'');
+  const error = ref<string>("");
 
-  function login(_username: string, _password: string) {
-    username.value = _username;
-    password.value = _password;
+  async function login(_username: string, _password: string) {
+    try {
+      const {data} = await $api.login({username:_username, password:_password});
+      useLocalStorage("username", data.username);
+      useLocalStorage("accessToken", data.token);
+      navigateTo("/");
+    } catch (e: any) {
+      error.value = e?.message ?? "failed to fetch notices";
+    }
   }
 
   return {
     username,
-    password,
     login,
   };
 });

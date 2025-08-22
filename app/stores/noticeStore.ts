@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import type { Notice } from "~/@type/notice/notice";
+import type { Notice } from "~/@type/notice/Notice";
 
 export const useNoticeStore = defineStore("NoticeStore", () => {
   const { $api } = useNuxtApp();

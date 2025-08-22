@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@primevue/nuxt-module',
+    '@vueuse/nuxt',
   ],
   primevue: {
     options: {
